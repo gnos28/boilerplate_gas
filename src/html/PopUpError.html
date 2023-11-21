@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- Importer Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+  <style>
+    #header {
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    #error {
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+      color: #721c24;
+      padding: 0.75em 1.25em;
+      border-radius: 0.25em;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    textarea {
+      width: 100%;
+      border: none;
+      background-color: transparent;
+      resize: none;
+      overflow: auto;
+      height: 10em;
+    }
+  </style>
+
+  <script>
+    let dataFromServerTemplate = <?!= JSON.stringify(dataFromServerTemplate) ?>;
+  </script>
+</head>
+
+<body class="d-flex align-items-center vh-100">
+  <div class="container">
+    <div class="row justify-content-center mb-3">
+      <div id="error" class="col-md-6">
+        <div class="d-flex justify-content-center align-items-center">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x text-danger"></i>
+            <i class="fa fa-exclamation fa-stack-1x fa-inverse"></i>
+          </span>
+          <textarea readonly><?= dataFromServerTemplate.error ?></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

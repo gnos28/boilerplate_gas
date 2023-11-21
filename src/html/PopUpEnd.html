@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- Importer Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+  <style>
+    #driveBtn {
+      background-color: #ffffff;
+      border-color: #0061a7;
+      color: #0061a7;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    #driveBtn:hover {
+      background-color: #f1f1f1;
+    }
+
+    #driveBtn:active {
+      background-color: #d9d9d9;
+    }
+
+    #driveBtn .icon {
+      width: 1em;
+      height: 1em;
+      margin-right: 5px;
+      display: inline-block;
+      background-image: url("https://www.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png");
+      background-size: cover;
+    }
+
+    #header {
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    #success {
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+      color: #155724;
+      padding: 0.75em 1.25em;
+      border-radius: 0.25em;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+  </style>
+
+  <script>
+    let data = <?!= JSON.stringify(dataFromServerTemplate) ?>;
+  </script>
+</head>
+
+<body class="d-flex align-items-center vh-100">
+  <div class="container">
+    <div class="row justify-content-center mb-3">
+      <div id="success" class="col-md-6">
+        <div class="d-flex justify-content-center align-items-center">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x text-success"></i>
+            <i class="fa fa-check fa-stack-1x fa-inverse"></i>
+          </span>
+          <div>
+            <?= dataFromServerTemplate.greenMessage ?>
+          </div>
+        </div>
+      </div>
+      <?= dataFromServerTemplate.normalMessage ?>
+    </div>
+  </div>
+</body>
+
+</html>

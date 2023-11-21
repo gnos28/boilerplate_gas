@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    /* CSS pour le spinner throbber-loader */
+    .throbber-loader {
+      margin: 40px auto;
+      width: 80px;
+      /* taille augmentée */
+      height: 80px;
+      /* taille augmentée */
+      position: relative;
+    }
+
+    .throbber-loader:before,
+    .throbber-loader:after {
+      content: "";
+      width: 80px;
+      /* taille augmentée */
+      height: 80px;
+      /* taille augmentée */
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 10px solid transparent;
+      /* épaisseur de bordure augmentée */
+      border-top-color: #3498db;
+    }
+
+    .throbber-loader:before {
+      z-index: 100;
+      animation: spin 1s infinite;
+    }
+
+    .throbber-loader:after {
+      border: 10px solid #eee;
+      /* épaisseur de bordure augmentée */
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Centrage du conteneur */
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .loading-text {
+      margin-bottom: 20px;
+    }
+
+    /* Style pour cacher la barre de défilement */
+    body,
+    html {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="loading-text">
+      <?= dataFromServerTemplate.loadingText ?>
+    </div>
+
+    <!-- Utilisation du spinner throbber-loader -->
+    <div class="throbber-loader"></div>
+  </div>
+</body>
+
+</html>

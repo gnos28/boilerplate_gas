@@ -1,0 +1,6 @@
+{
+  "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
+}
